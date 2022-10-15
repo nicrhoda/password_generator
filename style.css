@@ -12,11 +12,13 @@ body,
   padding: 0;
 }
 
+
+/* body element */
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
 }
-
+/* wrapper for all of the elements in the document */
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
@@ -29,7 +31,7 @@ header {
   padding-top: 0px;
   color: hsl(206, 17%, 28%);
 }
-
+/* styles for the different elements of the card */
 .card {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -71,7 +73,7 @@ header {
   display: block;
   clear: both;
 }
-
+/* styling for the button */
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -96,7 +98,7 @@ button [disabled] {
 .float-right {
   float: right;
 }
-
+/* styling for the random password output */
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -117,7 +119,7 @@ button [disabled] {
   resize: none;
   overflow: hidden;
 }
-
+/* responsive media queries */
 @media (max-width: 690px) {
   .btn {
     font-size: 1rem;

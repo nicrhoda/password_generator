@@ -6,10 +6,10 @@ function generatePassword() {
 // variables from prompt 
 
 var characterLength = prompt("How Many Characters? minimum,8 maximum, 128")
-var lowerCase = prompt("Include Lowercase? y or n")
-var upperCase = prompt("Include Uppercase? y or n")
-var numbers = prompt("Include Numbers? y or n")
-var specialCharacters = prompt("Include Special Characters? y or n")
+var lowerCase = confirm("Include Lowercase?")
+var upperCase = confirm("Include Uppercase?")
+var numbers = confirm("Include Numbers?")
+var specialCharacters = confirm("Include Special Characters?")
 
 // arrays 
 
@@ -27,32 +27,35 @@ var endArray = [];
 var emptyArray = [];
 
 //conditionals
+// if (characterLength <= "8", characterLength >= "128") {
+//     alert("please enter a valid number");
+// }
 
-if (lowerCase = "y") {
+if (lowerCase) {
   endArray = endArray.concat(lowerCaseArray);
 }
-else if (lowerCase = "n") {
-  endArray; 
-}
-else if (lowerCase != "y","n") {
-  alert("please try again and select valid option");
-}
 
-if (upperCase = "y") {
+if (upperCase) {
   endArray = endArray.concat(upperCaseArray);
 }
 
-if (numbers = "y") {
+if (numbers) {
   endArray = endArray.concat(numberArray);
 }
 
-if (specialCharacters = "y") {
+if (specialCharacters) {
   endArray = endArray.concat(specialCharacterArray);
 }
 
 for (var i = 0; i < characterLength; i++) {
   emptyArray.push (endArray[Math.floor(Math.random() * endArray.length)]);
 }
+
+if (characterLength > "128") {
+  alert("PLEASE ENTER A VALID NUMBER");
+  return;
+}
+
 
 return emptyArray.join("");
 }
@@ -61,7 +64,7 @@ return emptyArray.join("");
 
 function writePassword() {
   var password = generatePassword();
-  var passwordText = generateBtn.document.querySelector("#password");
+  var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
