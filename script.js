@@ -30,7 +30,14 @@ var emptyArray = [];
 // if (characterLength <= "8", characterLength >= "128") {
 //     alert("please enter a valid number");
 // }
-
+if (characterLength < 8) {
+  alert("please enter a valid number of characters");
+  return;
+}
+else if (characterLength > 128) {
+  alert("please enter a valid number of characters");
+  return;
+}
 if (lowerCase) {
   endArray = endArray.concat(lowerCaseArray);
 }
@@ -51,10 +58,7 @@ for (var i = 0; i < characterLength; i++) {
   emptyArray.push (endArray[Math.floor(Math.random() * endArray.length)]);
 }
 
-if (characterLength > "128") {
-  alert("PLEASE ENTER A VALID NUMBER");
-  return;
-}
+
 
 
 return emptyArray.join("");
